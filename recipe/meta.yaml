@@ -10,8 +10,8 @@ source:
   sha256: 3da12103f11cf49c3cf2fd2ce3017575c5321a489e5b9bfa81dd91ec413f3891
 
 build:
-  number: 0
-  skip: true  # [not linux]
+  number: 1
+  skip: true  # [not unix]
   run_exports:
     - {{ pin_subpackage('enchant', max_pin='x.x') }}
 
@@ -30,6 +30,7 @@ requirements:
   run:
     - glib
     - hunspell
+    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
   commands:
