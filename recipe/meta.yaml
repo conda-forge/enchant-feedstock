@@ -1,5 +1,5 @@
 {% set name = "enchant" %}
-{% set version = "2.5.0" %}
+{% set version = "2.6.3" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/AbiWord/{{ name }}/releases/download/v{{ version }}/enchant-{{ version }}.tar.gz
-  sha256: 149e224cdd2ca825d874639578b6246e07f37d5b8f3970658a377a1ef46f2e15
+  sha256: c1c5719f2a597ce3e06c938cfb99fb697da093dea7b857cc004dc1dcf1bba182
 
 build:
   number: 0
