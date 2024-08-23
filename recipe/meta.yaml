@@ -25,6 +25,7 @@ requirements:
     - groff  # [linux]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - glib
     - hunspell
