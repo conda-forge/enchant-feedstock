@@ -3,7 +3,7 @@ About enchant-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/enchant-feedstock/blob/main/LICENSE.txt)
 
-Home: https://abiword.github.io/enchant/
+Home: https://rrthomas.github.io/enchant/
 
 Package license: LGPL-2.1-only
 
