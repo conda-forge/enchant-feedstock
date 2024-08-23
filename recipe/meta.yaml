@@ -1,5 +1,5 @@
 {% set name = "enchant" %}
-{% set version = "2.5.0" %}
+{% set version = "2.7.1" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/AbiWord/{{ name }}/releases/download/v{{ version }}/enchant-{{ version }}.tar.gz
-  sha256: 149e224cdd2ca825d874639578b6246e07f37d5b8f3970658a377a1ef46f2e15
+  sha256: a1cb8239095d6b0bd99ba2dd012a1402cef1a194f5de1b7214bd528676a65229
 
 build:
-  number: 1
+  number: 0
   skip: true  # [not unix]
   run_exports:
     - {{ pin_subpackage('enchant', max_pin='x.x') }}
@@ -24,6 +24,7 @@ requirements:
     - libtool
     - groff  # [linux]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
   host:
