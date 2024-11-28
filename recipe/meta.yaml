@@ -1,5 +1,5 @@
 {% set name = "enchant" %}
-{% set version = "2.5.0" %}
+{% set version = "2.8.2" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/rrthomas/{{ name }}/releases/download/v{{ version }}/enchant-{{ version }}.tar.gz
-  sha256: 149e224cdd2ca825d874639578b6246e07f37d5b8f3970658a377a1ef46f2e15
+  sha256: 8f19535adb5577b83b00e02f330fe9b9eb40dd21f19e2899636fc4d3a7696375
 
 build:
-  number: 2
+  number: 0
   skip: true  # [not unix]
   run_exports:
     - {{ pin_subpackage('enchant', max_pin='x.x') }}
