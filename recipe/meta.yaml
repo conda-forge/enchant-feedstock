@@ -23,7 +23,7 @@ requirements:
     - automake
     - libtool
     - zlib
-    - groff  # [linux]
+    - groff
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
