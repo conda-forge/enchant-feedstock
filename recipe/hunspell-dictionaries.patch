@@ -3,7 +3,7 @@ Resolve that directory relative to the library so relocated environments work.
 
 --- a/providers/enchant_hunspell.cpp
 +++ b/providers/enchant_hunspell.cpp
-@@ -205,6 +205,12 @@ s_buildDictionaryDirs (EnchantProvider * me, std::vector<std::string> & dirs)
+@@ -218,6 +218,12 @@ s_buildDictionaryDirs (EnchantProvider * me, std::vector<std::string> & dirs)
  	dirs.push_back (tmp);
  	g_free(tmp);
  
@@ -13,6 +13,6 @@ Resolve that directory relative to the library so relocated environments work.
 +	dirs.push_back (tmp);
 +	g_free (tmp);
 +
- 	for (const gchar* const * iter = g_get_system_data_dirs (); *iter; iter++)
- 		{
- 			tmp = g_build_filename (*iter, me->identify (me), nullptr);
+ 	for (const gchar* const * iter = g_get_system_data_dirs (); *iter; iter++) {
+ 		tmp = g_build_filename (*iter, me->identify (me), nullptr);
+ 		dirs.push_back (tmp);
