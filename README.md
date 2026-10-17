@@ -215,4 +215,5 @@ Feedstock Maintainers
 
 * [@asmeurer](https://github.com/asmeurer/)
 * [@izahn](https://github.com/izahn/)
+* [@wolfv](https://github.com/wolfv/)
 
