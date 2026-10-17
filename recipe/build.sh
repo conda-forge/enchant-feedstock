@@ -13,7 +13,6 @@ autoreconf -vfi
 ./configure --prefix=$PREFIX \
   --disable-static \
   --enable-relocatable \
-  --disable-vala \
   --with-hunspell
 make -j"${CPU_COUNT}"
 make install
