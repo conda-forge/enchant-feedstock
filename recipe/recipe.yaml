@@ -34,7 +34,6 @@ requirements:
     - glib
     - hunspell
     - zlib
-    - pkg-config
   run:
     - glib
     - hunspell
