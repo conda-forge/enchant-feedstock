@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: enchant
-  version: "2.8.15"
+  version: "2.8.21"
 
 package:
   name: ${{ name }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/rrthomas/${{ name }}/releases/download/v${{ version }}/enchant-${{ version }}.tar.gz
-  sha256: d3fd9e4170bfb5110b0bda577fe764a38fb606b3c25d2f0c3840234521ff1252
+  sha256: dd2a762697c463148a8f59867089a5ebf2dd1449d869f93764b76c12bcf8acc0
   patches:
     - hunspell-dictionaries.patch
 
