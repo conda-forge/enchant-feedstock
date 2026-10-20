@@ -1,15 +1,20 @@
 Conda's dictionary packages install to share/hunspell_dictionaries.
-Resolve that directory relative to the library so relocated environments work.
+Resolve it relative to Enchant's relocated package data directory.
 
 --- a/providers/enchant_hunspell.cpp
 +++ b/providers/enchant_hunspell.cpp
-@@ -218,6 +218,10 @@ s_buildDictionaryDirs (EnchantProvider * me, std::vector<std::string> & dirs)
+@@ -218,6 +218,15 @@ s_buildDictionaryDirs (EnchantProvider * me, std::vector<std::string> & dirs)
  	dirs.push_back (tmp);
  	g_free(tmp);
  
-+	tmp = enchant_relocate (ENCHANT_HUNSPELL_DICT_DIR "_dictionaries");
-+	dirs.push_back (tmp);
-+	g_free (tmp);
++	GSList * conf_dirs = enchant_get_conf_dirs ();
++	if (conf_dirs) {
++		tmp = g_build_filename (static_cast<const gchar *>(conf_dirs->data),
++		                        "..", "hunspell_dictionaries", nullptr);
++		dirs.push_back (tmp);
++		g_free (tmp);
++		g_slist_free_full (conf_dirs, g_free);
++	}
 +
  	for (const gchar* const * iter = g_get_system_data_dirs (); *iter; iter++) {
  		tmp = g_build_filename (*iter, me->identify (me), nullptr);
