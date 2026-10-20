@@ -3,13 +3,11 @@ Resolve that directory relative to the library so relocated environments work.
 
 --- a/providers/enchant_hunspell.cpp
 +++ b/providers/enchant_hunspell.cpp
-@@ -218,6 +218,12 @@ s_buildDictionaryDirs (EnchantProvider * me, std::vector<std::string> & dirs)
+@@ -218,6 +218,10 @@ s_buildDictionaryDirs (EnchantProvider * me, std::vector<std::string> & dirs)
  	dirs.push_back (tmp);
  	g_free(tmp);
  
-+	gchar * prefix = enchant_get_prefix_dir ();
-+	tmp = g_build_filename (prefix, "share", "hunspell_dictionaries", nullptr);
-+	g_free (prefix);
++	tmp = enchant_relocate (ENCHANT_HUNSPELL_DICT_DIR "_dictionaries");
 +	dirs.push_back (tmp);
 +	g_free (tmp);
 +
